@@ -1,10 +1,10 @@
 public class Book {
 
-    private String bookName;
-    private String bookAuthor;
-    private int ageBook;
+    public String bookName;
+    public Author bookAuthor;
+    public int ageBook;
 
-    public Book(String bookName, String bookAuthor, int ageBook) {
+    public Book(String bookName, Author bookAuthor, int ageBook) {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.ageBook = ageBook;
@@ -14,8 +14,12 @@ public class Book {
         return this.bookName;
     }
 
-    public String getBookAuthor() {
+    public Author getBookAuthor() {
         return this.bookAuthor;
+    }
+
+    public String getAuthorFull() {
+        return bookAuthor.getFirstname()+" "+bookAuthor.getSecondName();
     }
 
     public int getAgeBook() {
@@ -26,4 +30,8 @@ public class Book {
         this.ageBook = ageBook;
     }
 
+    public void printBook() {
+        System.out.printf("%n Название:%s%n Автор:%s%n Год издания:%s%n",
+                this.getBookName(),this.getAuthorFull(), this.getAgeBook());
+    }
 }
