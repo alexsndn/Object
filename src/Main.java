@@ -2,16 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Author JamesJoes = new Author("James", "Joes");
-        Author StevenHoking = new Author("Steven", "Hoking");
+        Author jamesJoes = new Author("James", "Joes");
+        Author stevenHoking = new Author("Steven", "Hoking");
 
-        Book Uliss = new Book("Uliss", JamesJoes, 1920);
-        Book shortStoryTime = new Book("shortStoryTime", StevenHoking, 2010);
+        Book uliss = new Book("Uliss", jamesJoes, 1920);
+        Book shortStoryTime = new Book("shortStoryTime", stevenHoking, 2010);
 
-        Uliss.printBook();
-        shortStoryTime.printBook();
+        System.out.println(uliss);
+        System.out.println(shortStoryTime);
 
         shortStoryTime.setAgeBook(2011);
-        shortStoryTime.printBook();
+
+        System.out.println(shortStoryTime);
+
+        System.out.println(uliss.equals(shortStoryTime));
+
+        System.out.println(uliss.hashCode());
+        System.out.println(shortStoryTime.hashCode());
+
+
     }
 }
